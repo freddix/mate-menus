@@ -1,0 +1,61 @@
+diff -aurN mate-menus-2.22.2.orig/layout/mate-applications.menu mate-menus-2.22.2/layout/applications.menu
+--- mate-menus-2.22.2.orig/layout/mate-applications.menu	2008-05-26 18:10:56.000000000 +0200
++++ mate-menus-2.22.2/layout/mate-applications.menu	2008-05-30 21:51:35.000000000 +0200
+@@ -24,7 +24,11 @@
+     <Directory>Accessories.directory</Directory>
+     <Include>
+       <And>
+-        <Category>Utility</Category>
++        <Or>
++	<Category>Utility</Category>
++	<Category>TerminalEmulator</Category>
++	<Category>TextEditor</Category>
++	</Or>
+ 	<!-- Accessibility spec must have either the Utility or Settings
+ 	     category, and we display an accessibility submenu already for
+ 	     the ones that do not have Settings, so don't display accessibility
+@@ -109,7 +113,11 @@
+     <Directory>Multimedia.directory</Directory>
+     <Include>
+       <And>
+-        <Category>AudioVideo</Category>
++      	<Or>
++         <Category>AudioVideo</Category>
++	 <Category>Audio</Category>
++	 <Category>Video</Category>
++	</Or>
+       </And>
+     </Include>
+   </Menu>   <!-- End Multimedia -->
+@@ -121,6 +129,9 @@
+     <Include>
+       <And>
+         <Category>Office</Category>
++	<Not>
++	 <Category>TextEditor</Category>
++	</Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Office -->
+@@ -144,11 +155,21 @@
+     <OnlyUnallocated/>
+     <Include>
+       <And>
++	<Or>
++	 <Category>Amusement</Category>
++	 <Category>Applet</Category>
++	 <Category>Application</Category>
++	</Or>
+         <Not><Category>Core</Category></Not>
+         <Not><Category>Settings</Category></Not>
+         <Not><Category>Screensaver</Category></Not>
+       </And>
+     </Include>
++
++    <Exclude>
++     <Filename>yelp.desktop</Filename>
++    </Exclude>
++
+   </Menu> <!-- End Other -->
+ 
+ </Menu> <!-- End Applications -->
