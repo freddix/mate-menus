@@ -1,7 +1,7 @@
 Summary:	Implementation of the draft Desktop Menu Specification
 Name:		mate-menus
 Version:	1.8.0
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
@@ -84,7 +84,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 %{__rm} $RPM_BUILD_ROOT%{py_sitedir}/*.la
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,crh,dv,en@shaw,gn,ha,ig,io,ps}
 
 %find_lang %{name} --with-gnome --all-name
 
